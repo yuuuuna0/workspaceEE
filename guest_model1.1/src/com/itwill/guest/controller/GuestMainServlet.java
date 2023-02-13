@@ -17,7 +17,7 @@ public class GuestMainServlet extends HttpServlet {
    
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String forwardPath="guest_main.jsp";
+		String forwardPath="WEB-INF/views/guest_main.jsp";
 		RequestDispatcher rd=request.getRequestDispatcher(forwardPath);
 		rd.forward(request, response);
 	}

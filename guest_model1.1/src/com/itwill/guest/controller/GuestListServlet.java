@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/guest_list.do")
 public class GuestListServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String forwardPath="guest_list.jsp";
+		String forwardPath="WEB-INF/views/guest_list.jsp";
 		RequestDispatcher rd=request.getRequestDispatcher(forwardPath);
 		rd.forward(request, response);
 	}
