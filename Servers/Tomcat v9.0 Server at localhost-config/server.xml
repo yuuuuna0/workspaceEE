@@ -154,7 +154,7 @@
 
 	
 
-      <Context docBase="web-project-team3-hotdog" path="/web-project-team3-hotdog" reloadable="true" source="org.eclipse.jst.jee.server:web-project-team3-hotdog"/><Context docBase="web-project-team4-seoulbaguette" path="/web-project-team4-seoulbaguette" reloadable="true" source="org.eclipse.jst.jee.server:web-project-team4-seoulbaguette"/><Context docBase="web-project-team1-bookbread" path="/" reloadable="true" source="org.eclipse.jst.jee.server:web-project-team1-bookbread"/><Context docBase="web-project-team4-hellomart" path="/web-project-team4-hellomart" reloadable="true" source="org.eclipse.jst.jee.server:web-project-team4-hellomart"/></Host>
+      <Context docBase="jspSite" path="/jspSite" reloadable="true" source="org.eclipse.jst.jee.server:jspSite"/></Host>
     </Engine>
   </Service>
 </Server>
