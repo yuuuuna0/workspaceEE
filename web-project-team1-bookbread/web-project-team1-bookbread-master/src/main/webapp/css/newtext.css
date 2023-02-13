@@ -1,0 +1,44 @@
+.txt span {position:relative;  display: inline-block; color: colours; letter-spacing:-0.8px;
+animation:txtup 1.5s infinite; -webkit-animation:txtup 1.5s infinite;  -ms-animation:txtup 1.5s infinite;   -moz-animation: txtup 1.5s infinite; 
+	-webkit-animation-name: colours;
+
+}
+.txt span:nth-of-type(1){animation-delay:0.1s;}
+.txt span:nth-of-type(2){animation-delay:0.2s;}
+.txt span:nth-of-type(3){animation-delay:0.3s;}
+.txt span:nth-of-type(4){animation-delay:0.4s;} 
+.txt span:nth-of-type(5){animation-delay:0.4s;} 
+@-webkit-keyframes txtup {
+    0%{top:0;}
+    20% {top:-0.2rem;}
+    40% {top:0;}
+    60% {top:0;}
+    80% {top:0;}
+    100% {top:0}
+}
+@keyframes txtup {
+    0% {top:0;}
+    20% {top:-0.2rem;}
+    40% {top:0}
+    60% {top:0}
+    80% {top:0}
+    100% {top:0}
+}
+
+@-webkit-keyframes colours {
+    0% {color: #39f;}
+	 15% {color: #8bc5d1;}
+	 30% {color: #f8cb4a;}
+	 45% {-color: #95b850;}
+	 60% {color: #944893;}
+	 75% {color: #c71f00;}
+	 90% {color: #bdb280;}
+	100% {color: #39f;}
+}
+.text on {
+	-webkit-animation-direction: normal;
+	-webkit-animation-duration: 60s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name: colours;
+	-webkit-animation-timing-function: ease;
+}
