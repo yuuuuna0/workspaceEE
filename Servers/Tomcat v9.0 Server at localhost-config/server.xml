@@ -154,7 +154,7 @@
 
 	
 
-      <Context docBase="jspSite" path="/jspSite" reloadable="true" source="org.eclipse.jst.jee.server:jspSite"/></Host>
+      <Context docBase="jspSite" path="/jspSite" reloadable="true" source="org.eclipse.jst.jee.server:jspSite"/><Context docBase="user_model1" path="/user_model1" reloadable="true" source="org.eclipse.jst.jee.server:user_model1"/></Host>
     </Engine>
   </Service>
 </Server>
