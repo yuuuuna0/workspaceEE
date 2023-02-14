@@ -42,6 +42,12 @@ public class GuestModifyActionServlet extends HttpServlet {
 										 guest_content);
 				guestService.update(newGuest);
 				forwardPath="redirect:guest_view.do?guest_no="+guest_noStr;
+				/*
+				 * redirection할 것에 forwarding을 사용할 경우
+				 * forwardPath="forward:/WEB-INF/views/guest_view.do " ==> 회원정보 수정완료를 눌렀을 때 /guest_mofify_action.do 호출 ->/guest_view.do 호출됨 ->/guest_view.jsp 출력됨
+				 * 									즉 url은 guest_modify_action.do로 띄워지고 화면에는 guest_view.jsp가 출력되는 현상이 나옴 
+				 */
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
