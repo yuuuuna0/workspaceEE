@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.itwill.guest.Guest;
 import com.itwill.guest.GuestService;
+import com.itwill.guest.controller.GuestListController;
+import com.itwill.guest.controller.GuestMainController;
 
 /*
  * 1. 클라이언트(웹브라우져)의 모든요청을 받는 서블릿작성(front Controller)
@@ -68,18 +70,13 @@ public class DispatcherServlet extends HttpServlet {
 		 */
 		String forwardPath="";
 		if(command.equals("/guest_main.do")) {
-			forwardPath="forward:/WEB-INF/views/guest_main.jsp";
-			
+			/***************** guest_main.do를 처리하는 Controller 객체 생성 ***************/
+			GuestMainController controller=new GuestMainController();
+			forwardPath=controller.handleRequest(request, response);
 		}else if(command.equals("/guest_list.do")) {
-			try {
-				List<Guest> guestList=guestService.findAll();
-				forwardPath="forward:/WEB-INF/views/guest_list.jsp";
-				request.setAttribute("userList", guestList);
-
-			} catch (Exception e) {
-				e.printStackTrace();
-				forwardPath="forward:/WEB-INF/views/guest_error.jsp";
-			}
+			/***************** guest_list.do를 처리하는 Controller 객체 생성 ***************/
+			GuestListController controller=new GuestListController();
+			forwardPath=controller.handleRequest(request, response);
 			
 		}else if(command.equals("/guest_modify_action.do")) {
 			try {
