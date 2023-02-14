@@ -10,7 +10,7 @@ import com.itwill.guest.GuestService;
 
 public class GuestListController {
 	private GuestService guestService;
-	public GuestListController() throws Exception{
+	public GuestListController() {
 		guestService=new GuestService();
 	}
 	
