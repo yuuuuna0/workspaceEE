@@ -3,7 +3,7 @@
   <display-name>guest_model1.1</display-name>
   <filter>
     <filter-name>Encoding Filter</filter-name>
-    <filter-class>com.itwill.filter.EncodingFilter</filter-class>
+    <filter-class>com.itwill.summer.filter.EncodingFilter</filter-class>
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
