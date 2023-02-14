@@ -24,13 +24,13 @@ try{
 	String guest_title=request.getParameter("guest_title");
 	String guest_content=request.getParameter("guest_content");
 	GuestService guestService=new GuestService();
-	guestService=null;
+	//guestService=null;
 	guestService.insert(
 			new Guest(0,guest_name,null,guest_email,guest_homepage,guest_title,guest_content));
 	response.sendRedirect("guest_list.do");
 }catch(Exception e){
 	e.printStackTrace();
-	response.sendRedirect("guest_error.do");
+	response.sendRedirect("guest_error.jsp");
 	
 }
 %>

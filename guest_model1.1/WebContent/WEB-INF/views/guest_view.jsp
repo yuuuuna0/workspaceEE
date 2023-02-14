@@ -35,7 +35,7 @@
 	 return;
  }catch(Exception e){
 	 e.printStackTrace();
-	 response.sendRedirect("guest_error.do");
+	 response.sendRedirect("guest_error.jsp");
  }
  
 %>

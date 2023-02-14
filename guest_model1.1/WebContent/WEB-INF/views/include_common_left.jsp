@@ -6,5 +6,5 @@
 <ul>
 	<li><a href="guest_main.do">방명록홈</a></li>
 	<li><a href="guest_list.do">방명록리스트</a></li>
-	<li><a href="guest_write_do.jsp">방명록쓰기폼</a></li>
+	<li><a href="guest_write_form.do">방명록쓰기폼</a></li>
 </ul>

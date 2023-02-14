@@ -18,6 +18,8 @@ public class GuestModifyActionServlet extends HttpServlet {
 		String forwardPath="WEB-INF/views/guest_modify_action.jsp";
 		RequestDispatcher rd=request.getRequestDispatcher(forwardPath);
 		rd.forward(request, response);
+		
+		
 	}
 
 }
