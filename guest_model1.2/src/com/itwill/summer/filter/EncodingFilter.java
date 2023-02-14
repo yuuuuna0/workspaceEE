@@ -1,4 +1,4 @@
-﻿package com.itwill.filter;
+﻿package com.itwill.summer.filter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -25,8 +25,10 @@ public class EncodingFilter implements Filter {
 	 */
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.encoding = filterConfig.getInitParameter("encoding");
+		/*
 		System.out.println("생성직후 단한번호출 init(): encoding parameter-->"
 					+ encoding);
+		*/
 	}
 	
 
