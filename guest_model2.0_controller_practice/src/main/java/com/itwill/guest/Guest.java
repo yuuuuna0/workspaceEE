@@ -11,6 +11,7 @@ GUEST_TITLE    NOT NULL VARCHAR2(100)
 GUEST_CONTENT  NOT NULL VARCHAR2(4000) 
 */
 public class Guest {
+	
 	private int guest_no;
 	private String guest_name;
 	private String guest_date;
