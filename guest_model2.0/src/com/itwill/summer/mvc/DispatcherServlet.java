@@ -41,38 +41,39 @@ import com.itwill.guest.controller.GuestWriteFormController;
 
 public class DispatcherServlet extends HttpServlet {
 	/*
-	 * Controller객체를 저장할 Map
+	 * Controller 객체를 저장할Map
 	 */
 	private Map<String, Controller> handlerMapping;
 	
 	@Override
-		public void init(ServletConfig config) throws ServletException {
-			super.init(config);
-			handlerMapping=new HashMap<String, Controller>();
-			/*
-			 << Map<String, Controller> handlerMapping>>
-			 ------------------------------------------------
-			 |key(String)      |      value(Controller객체) |
-			 ------------------------------------------------
-			 |/guest_main.do   |com..GuestMainController객체|	
-			  -----------------------------------------------
-			 |/guest_list.do   |com..GuestListController객체|		
-			  -----------------------------------------------
-			 |/guest_view.do   |com..GuestViewController객체|		
-			 ------------------------------------------------
-			 */
-			//요청url에 따른 객체 생성코드를 분리!!
-			handlerMapping.put("/guest_main.do", new GuestMainController());
-			handlerMapping.put("/guest_list.do", new GuestListController());
-			handlerMapping.put("/guest_modify_action.do", new GuestModifyActionController());
-			handlerMapping.put("/guest_modify_form.do", new GuestModifyFormController());
-			handlerMapping.put("/guest_remove_action.do", new GuestRemoveActionController());
-			handlerMapping.put("/guest_view.do", new GuestViewController());
-			handlerMapping.put("/guest_write_action.do", new GuestWriteActionController());
-			handlerMapping.put("/guest_write_form.do", new GuestWriteFormController());
-			handlerMapping.put("/guest_error.do", new GuestErrorController());
-			System.out.println(">> init: "+handlerMapping);
-		}
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		handlerMapping=new HashMap<String, Controller>();
+		/*
+		 << Map<String, Controller> handlerMapping>>
+		 ------------------------------------------------
+		 |key(String)      |      value(Controller객체) |
+		 ------------------------------------------------
+		 |/guest_main.do   |com..GuestMainController객체|	
+		  -----------------------------------------------
+		 |/guest_list.do   |com..GuestListController객체|		
+		  -----------------------------------------------
+		 |/guest_view.do   |com..GuestViewController객체|		
+		 ------------------------------------------------
+		 */
+		/*********************************직접생성*********************/
+		handlerMapping.put("/guest_main.do", new GuestMainController());
+		handlerMapping.put("/guest_list.do", new GuestListController());
+		handlerMapping.put("/guest_view.do", new GuestViewController());
+		handlerMapping.put("/guest_write_form.do", new GuestWriteFormController());
+		handlerMapping.put("/guest_write_action.do", new GuestWriteActionController());
+		handlerMapping.put("/guest_modify_form.do", new GuestModifyFormController());
+		handlerMapping.put("/guest_modify_action.do", new GuestModifyActionController());
+		handlerMapping.put("/guest_remove_action.do", new GuestRemoveActionController());
+		handlerMapping.put("/guest_error.do", new GuestErrorController());
+		System.out.println(">> init:"+handlerMapping);
+		
+	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
@@ -101,9 +102,10 @@ public class DispatcherServlet extends HttpServlet {
 		String contextPath=request.getContextPath();
 		String command = requestURI.substring(contextPath.length());
 		/*
-		 * 2-1.DispatcherServlet이 클라이언트요청에따른 업무실행할 Controller객체 얻기
-		 * 	<< handlerMapping 객체로부터 요청 command를 처리할 Controller 객체 얻기 >>
+		 * 2-1.DispatcherServlet이 클라이언트요청에따른 업무실행할 Controller객체얻기
+		 * 	<< handlerMapping객체로부터 요청command를 처리할Controller객체얻기 >>
 		 */
+		
 		Controller controller=handlerMapping.get(command);
 		/*
 		 * 2-2.DispatcherServlet이 Controller객체의 handleRequest메쏘드 실행
