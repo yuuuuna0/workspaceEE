@@ -1,3 +1,5 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.List"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.itwill.bean.Guest"%>
@@ -17,10 +19,17 @@
 	pageContext.setAttribute("weight", 78.23);
 	pageContext.setAttribute("height", 183);
 	
-	/*
 	pageContext.setAttribute("1234", 183);
 	pageContext.setAttribute("3.141592", 183);
-	*/
+	
+	Guest guest=null;
+	List<Guest> guestList=new ArrayList<Guest>();
+	Map<String,Guest> guestMap=new HashMap<String,Guest>();
+	String emptyStr="";
+	pageContext.setAttribute("guest", guest);
+	pageContext.setAttribute("guestList", guestList);
+	pageContext.setAttribute("guestMap", guestMap);
+	pageContext.setAttribute("emptyStr", emptyStr);
 %>
 
 <!DOCTYPE html>
@@ -50,12 +59,50 @@
 		<li>${age}</li>
 		<li>${weight}</li>
 		<li>${height}</li>
-		<li>---------EL 연산자--------</li>
-		
-		<li>----------null or size체크---------</li>
-		
-		<li>----------null or size체크(empty연산자)---------</li>
-		
+		<li>---------[3] EL 연산자--------</li>
+		<li>${23+56}</li>
+		<li>${23-56}</li>
+		<li>${23*56}</li>
+		<li>${1/2}</li>
+		<li>${(1+2)-89/(34+90)*0.2}</li>
+		<li>${int1+int2}</li>
+		<li>${int1-int2}</li>
+		<li>${int1*int2}</li>
+		<li>${int1/int2}</li>
+		<li>${double1/double2+0.2351401}</li>
+		<li>{string1+string2}(X)문자열 concat연산자사용불가능</li>
+		<li>${string1}${string2}</li>
+		<li>${"123"+"456"+"7"}</li>
+		<li>age>= 30 --> ${age>=30}</li>
+		<li>age<= 30 --> ${age<=30}</li>
+		<li>age> 30 --> ${age>30}</li>
+		<li>age< 30 --> ${age<30}</li>
+		<li>age!= 30 --> ${age!=30}</li>
+		<li>age== 30 --> ${age==30}</li>
+
+		<li>age ge 30 --> ${age ge 30}</li>
+		<li>age le 30 --> ${age le 30}</li>
+		<li>age gt 30 --> ${age gt 30}</li>
+		<li>age lt 30 --> ${age le 30}</li>
+		<li>age ne 30 --> ${age ne 30}</li>
+		<li>age eq 30 --> ${age eq 30}</li>
+		<li>30대인가요? ${age>=30 && age<40}</li>
+		<li>30대 아닌가요? ${!(age>=30 && age<40)}</li>
+		<li>30대 아닌가요? ${age<30 || age>40}</li>
+		<li>30대이고 180 이상인가요?? ${age>=30 && age<40 && height>=180}</li>
+		<li>----------[4] null or "" or size체크---------</li>
+		<li>${guest==null}</li>
+		<li>${emptyStr.equals("")}</li>
+		<li>${guestList.size()==0 }</li>
+		<li>${guestMap.size()==0 }</li>
+		<li>----------[5] null or size체크(empty연산자)---------</li>
+		<li>${empty(guest)}</li>
+		<li>${empty(emptyStr)}</li>
+		<li>${empty(guestList)}</li>
+		<li>${empty(guestMap)}</li>
+		<li>${empty('')}</li>
+		<li>${empty("")}</li>
+		<li>${empty null}</li>
 
 
 	</ul>
