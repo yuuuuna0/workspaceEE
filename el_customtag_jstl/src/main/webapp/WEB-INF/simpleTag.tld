@@ -24,19 +24,8 @@
 		<attribute>
 			<name>irum</name>
 			<required>true</required>
-			<rtexprvalue>true</rtexprvalue>
 			<type>java.lang.String</type>
-		</attribute>
-	</tag>
-	<tag>
-		<name>if</name>
-		<tagclass>com.itwill.tag.IfBodyTag</tagclass>
-		<bodycontent>JSP</bodycontent>
-		<attribute>
-			<name>test</name>
-			<required>true</required>
 			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.Boolean</type>
 		</attribute>
 	</tag>
 	
