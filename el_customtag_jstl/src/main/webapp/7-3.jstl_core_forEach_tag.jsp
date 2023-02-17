@@ -19,7 +19,8 @@
 	guestMap.put("g2", g2);
 	guestMap.put("g3", g3);
 	
-	
+	request.setAttribute("guestList",guestList);
+	request.setAttribute("guestMap",guestMap);
 %>
 <!DOCTYPE html>
 <html>
@@ -53,25 +54,17 @@
 	<ul>
 		<li>-------ArrayList[배열]-------</li>
 		<%
-			for(Guest guest:guestList){ 
-				pageContext.setAttribute("guest", guest);
+			for(Guest guest:guestList){
+				pageContext.setAttribute("guest",guest);
 		%>
-			
-			<li>${guest}</li>
-			
-		<%}%>
-		<li>###############################</li>
+			<li>${guuest}</li>
+		<%} %>
 		<c:forEach items="${guestList}" var="guest">
-			<li>[${guest.guest_no}] ${guest.guest_name},${guest.guest_email}</li>
-		</c:forEach>
-		<li>---------------Map--------------</li>
-		<c:forEach items="${guestMap}" var="guestEntry">
-		<!-- Map.Entry 객체는 getKey(),getValue()메쏘드를가짐 -->
-			<li>${guestEntry.key} = ${guestEntry.value}-->
-			${guestEntry.value.guest_no},${guestEntry.value.guest_name}
-			</li>
-		</c:forEach>
+			<li>${guest}: [${guest.guest_no}] ${guest.guest_name}</li>
 		
+		</c:forEach>
+		<li>###############################</li>
+		<li>---------------Map--------------</li>
 	</ul>
 </body>
 </html>
