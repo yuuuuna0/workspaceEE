@@ -7,6 +7,7 @@ public class IfTag extends TagSupport{
 	private boolean test;
 	
 	public void setTest(boolean test) {
+		this.test=test;
 	}
 
 	@Override
