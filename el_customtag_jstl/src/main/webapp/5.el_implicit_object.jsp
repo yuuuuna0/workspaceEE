@@ -46,7 +46,8 @@
 	<li>${pageContext.response}</li>
 	<li>${pageContext.servletContext}</li>
 	<li>${pageContext.page}</li>
-	<li>${pageContext.session}</li>
+	<li>${pageContext.session}
+	</li>
 	<li>${pageContext.servletConfig}</li>
 </ul>	
 </body>
